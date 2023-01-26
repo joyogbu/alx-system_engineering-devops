@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# run 10 iterations, print bad luck at 4th, good luck at the 8th and Best School at every other
+
+i=1
+while((i<11))
+do
+	if (("$i" == 4))
+	then
+		echo "bad luck"
+	
+	elif (("$i" == 8))
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((i++))
+done
