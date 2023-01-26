@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# run 20 iterations to print 1 to 20
+
+i=0
+while(($i<20))
+do
+	case  
