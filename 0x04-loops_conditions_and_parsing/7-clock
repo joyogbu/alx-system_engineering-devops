@@ -20,7 +20,7 @@ do
 	fi
 	if ((i == 12))
 	then
-		echo "00"
+		echo "0"
 		break
 	fi
 	echo "$i"
