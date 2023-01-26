@@ -18,6 +18,11 @@ do
 	then
 		echo "Hour: 1"
 	fi
+	if ((i == 12))
+	then
+		echo "00"
+		break
+	fi
 	echo "$i"
 	((i++))
 done
