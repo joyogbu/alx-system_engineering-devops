@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # get the pid of all processes
 
-ps -aux
+ps -auxf
