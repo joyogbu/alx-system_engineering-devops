@@ -4,7 +4,7 @@
 i=1
 j=1
 h=0
-while ((i<=12))
+while ((h<=12))
 do
 	while ((j<60))
 	do

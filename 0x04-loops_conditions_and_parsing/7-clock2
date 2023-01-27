@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# displays the hour amd minutes of clock
+
+i=1
+h=0
+#echo "Hour: $h"
+while ((i<=60))
+do
+	echo "Hour: $h"
+	
+	while ((h<=2))
+	do
+		if ((i == 59))
+		then
+			#((i=1))
+			((h++))
+		fi
+	done
+#	while ((i<60))
+	#do
+	echo "$i"
+	((i++))
+		
+	#done
+	#echo "Hour: $h"
+	#((h++))
+	$done
+done
