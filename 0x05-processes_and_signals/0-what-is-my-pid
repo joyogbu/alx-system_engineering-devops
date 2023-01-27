@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# prigram that displays its own pid
+
+echo $$
