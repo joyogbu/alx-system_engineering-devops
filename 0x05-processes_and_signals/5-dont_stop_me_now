@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 # displays an infinite loop
 
-while true
-do
-	echo "To infinity and beyond"
-	kill -s SIGTERM $$
-done
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
