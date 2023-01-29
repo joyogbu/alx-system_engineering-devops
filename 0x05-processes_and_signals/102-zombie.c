@@ -4,18 +4,27 @@
 #include <stdio.h>
 #include <stddef.h>
 
+/**
+ * infinite_while - sleep the parent process
+ * Return: 0
+ */
 int infinite_while(void)
 {
-    while (1)
-    {
-        sleep(1);
-    }
-    return (0);
+	while (1)
+	{
+		sleep(1);
+	}
+	return (0);
 }
+/**
+ * main - create zombie processes
+ * Return: 0
+ */
 int main(void)
 {
 	int i = 0;
 	pid_t c_pid;
+
 	while (i < 5)
 	{
 		c_pid = fork();
