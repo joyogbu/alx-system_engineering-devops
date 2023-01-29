@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# create a script and kill a process
+
+echo $$>"/var/run/myscript.pid"
+#echo "To infinity and beyond"
+trap "echo I hate the kill command" SIGTERM
+trap "echo Y U no love me?!" SIGINT
+trap "rm /var/run/myscript.pid" 3 SIGQUIT SIGTERM
+while true
+do
+	echo "To infinity and beyond"
+done
+exit
