@@ -1,33 +1,16 @@
 #!/usr/bin/env bash
 # displays the hour amd minutes of clock
 
-i=1
-j=1
 h=0
 while ((h<=12))
 do
-	while ((j<60))
+	i=1
+	echo "Hour: $h"
+	
+	while ((i<=59))
 	do
-		if ((j == 59))
-		then
-			((h++))
-		fi
-		if ((j == 1))
-		then
-			echo "Hour: $h"
-		fi
-		echo "$j"
-		((j++))
+		echo "$i"
+		((i++))
 	done
-	if ((i == 1))
-	then
-		echo "Hour: $h"
-	fi
-	if ((i == 12))
-	then
-		echo "00"
-		break
-	fi
-	echo "$i"
-	((i++))
+	((h++))
 done
