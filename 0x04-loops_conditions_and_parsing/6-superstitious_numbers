@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 # run 20 iterations to print 1 to 20
 
-i=0
-while(($i<20))
+i=1
+while(($i<=20))
 do
-	case  
+	case $i in
+		4) echo 4; echo "bad luck from China";;
+		9) echo 9; echo "bad luck feom Japan";;
+		17) echo 17; echo "bad luck from Italy";;
+		*) echo $i
+	esac
+	((i++))
+done
