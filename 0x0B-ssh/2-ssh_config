@@ -1,0 +1,5 @@
+# ssh client configuration
+Host 100.25.23.88
+IdentityFile ~/.ssh/school
+Protocol 2 
+
