@@ -10,4 +10,4 @@ printf %s "server {
    root /var/www/html;
    index index.html index.htm index.nginx-debian.html;
 }" > etc/nginx/sites-available/default
-sudo service nginx restart
+sudo service nginx start
