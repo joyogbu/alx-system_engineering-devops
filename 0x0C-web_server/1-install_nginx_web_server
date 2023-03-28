@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # configure an ubuntu nginx
-apt-get update
-apt-get -y install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
 #touch /var/www/html/index.html
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Hello World!" > /var/www/html/index.html
 printf %s "server {
    listen 80;
    listen [::]:80;
    root /var/www/html;
-   index index.html index.htm index.nginx-debian.html;
+   index index.html index.htm;
 }" > etc/nginx/sites-available/default
 sudo service nginx start
