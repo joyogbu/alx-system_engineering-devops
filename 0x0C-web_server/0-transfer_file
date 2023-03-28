@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# copy file from client to server
+if (($# < 3))
+then
+	echo "usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+else
+	#1-path to source, 2-IP of server, 3-usernmame scp connect to, 4-path to key
+	#user=$1@$2
+	#echo $user
+	scp -i $4 $3@$2:$1
+fi
