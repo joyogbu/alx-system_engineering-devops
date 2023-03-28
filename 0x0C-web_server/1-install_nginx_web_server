@@ -2,11 +2,13 @@
 # configure an ubuntu nginx
 sudo apt-get update
 sudo apt-get -y install nginx
+touch /var/www/html/index.html
+echo 'Hello World!' > /var/www/html/index.html
 server {
    listen 80;
    listen [::]:80;
    #server_name example.com;
-   index index.html index.htm index.nginx-debian.html;
+   index index.html;
    root /var/www/html
    location / {
               try_files $uri $uri/ =404;
