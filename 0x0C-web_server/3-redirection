@@ -2,14 +2,14 @@
 # configuring nginx server for redirect
 sudo apt-get update
 sudo apt-get -y install nginx
-touch /var/www/html/redirect_me
+# touch /var/www/html/redirect_me
 printf %s "server {
      listen 80;
      listen [::]:80;
-     root /var/www/html
+     root /var/www/html;
      index index.html index.htm;
      location /redirect_me {
-          rewrite ^redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4/$1 redirect;
+          rewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
      }
 }" > /etc/nginx/sites-available/default
 sudo service nginx restart
