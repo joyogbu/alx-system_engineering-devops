@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# double the number of servers
+#!/usr/bin/env bash
+# configuring nginx server for redirect
+sudo apt-get update
+sudo apt-get -y install nginx
+# touch /var/www/html/redirect_me
+printf %s "server {
+     listen 80;
+     listen [::]:80;
+     root /var/www/html;
+     index index.html index.htm;
+     location / {
+          add_header X-Served-By $host;
+	  try_files $uri $uri/ 404;
+     }
+}" > /etc/nginx/sites-available/default
+sudo service nginx restart
