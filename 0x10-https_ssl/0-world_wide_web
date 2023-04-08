@@ -2,7 +2,7 @@
 # configuring the subdomains
 func () {
 	output=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -n1)
-	echo "$2 $output" | awk '{print "The subdomain "$1" is a "$5" record pointing to "$6""}'
+	echo "$2 $output" | awk '{print "The subdomain "$1" is a "$5" record and points to "$6""}'
 }
 if [ -z "$2" ]
 then
