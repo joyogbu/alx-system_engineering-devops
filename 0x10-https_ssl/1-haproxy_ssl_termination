@@ -1,0 +1,29 @@
+global
+	maxconn 5000
+	tune.ssl.default-dh-param 2048
+	option forwardfor
+   	option http-server-close
+frontend www-http
+	mode http
+	redirect scheme https code 301 if !{ ssl_fc }
+	bind 34.224.2.238:80
+	reqadd X-Forwarded-Proto:\ http
+	default-backend www-backend
+frontend www-https
+	bind 34.224.2.238:443 ssl crt /etc/haproxy/certs/mycrib.pem
+	reqadd X-Fprwarded-Proto:\ https
+	acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+   	use_backend letsencrypt-backend if letsencrypt-acl
+   	default_backend www-backend
+backend www-backend    
+	mode http
+	balance roundrobin
+	option httpchk HEAD /
+	http-response set-header X-Frame-Options SAMEORIGIN
+      	http-response set-header X-XSS-Protection 1;mode=block
+        http-response set-header X-Content-Type-Options nosniff
+      	default-server check maxconn 5000
+	server 142632-web-01 100.25.23.88:80 check
+	server 142632-web-02 34.204.95.105:80 check
+backend letsencrypt-backend
+	server letsencrypt 127.0.0.1:54321
