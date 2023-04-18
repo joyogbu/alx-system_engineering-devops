@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # run software as another user
 arg1=$1
-sudo runuser -u "$arg1" -- whoami
+runuser -u "$arg1" -- whoami
