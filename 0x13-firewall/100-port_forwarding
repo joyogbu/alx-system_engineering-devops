@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# redirect port 8080 to 80
+iptables -t nat -I PREROUTING --src 0/0 --dst 127.0.0.1 -p tcp --dport 80 -j REDIRECT --to-ports 8080
