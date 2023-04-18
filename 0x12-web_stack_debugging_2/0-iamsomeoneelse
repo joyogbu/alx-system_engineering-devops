@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# run software as another user
+arg1=$1
+runuser -u "$arg1" echo $arg1
