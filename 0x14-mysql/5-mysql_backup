@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# create backup of database and store in a physical location
+dt=$(date +%d-%m-%Y)
+out="$dt"."tar.gz"
+sudo mysqldump -u root -p"$1" --all-databases > backup.sql | gzip > "$out"
