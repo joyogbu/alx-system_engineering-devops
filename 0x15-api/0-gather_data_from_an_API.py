@@ -2,8 +2,8 @@
 """gather data from an api"""
 
 
-import sys
 import requests
+import sys
 
 
 if __name__ == "__main__":
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     for records in tasks:
         if (records.get("completed")) is True:
             titles.append(records.get('title'))
-    print("Employee {} is done with \
-            tasks({}/{}):".format(name, len(titles), len(tasks)))
+    print("Employee {} is done with tasks({}/{}):".
+          format(name, len(titles), len(tasks)))
     for t in titles:
-        print("\t{}".format(t))
+        print("\t {}".format(t))
