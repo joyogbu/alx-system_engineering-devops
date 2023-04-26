@@ -18,4 +18,7 @@ if __name__ == "__main__":
     tasks = req2.json()
     filename = "{}.json".format(arg1)
     with open(filename, "w") as jsonfile:
-        json.dump({arg1: [{"task": task.get('title'), "completed": task.get('completed'), "username": name} for task in tasks]}, jsonfile)
+        json.dump({arg1: [{
+            "task": task.get('title'),
+            "completed": task.get('completed'),
+            "username": name} for task in tasks]}, jsonfile)
