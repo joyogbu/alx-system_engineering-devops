@@ -11,12 +11,15 @@ def top_ten(subreddit):
     headers = {
         "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
     }
-    # headers = {'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0'}
-    req = requests.get(url, headers=headers, allow_redirects=False)
+    params = {
+        "limit": 10
+    }
+    req = requests.get(url, params=params, headers=headers,
+                       allow_redirects=False)
     if req.status_code == 404:
-        print ("None")
+        print("None")
         return
     results = req.json()
     myData = results.get("data").get("children")
-    for i in range(2):
+    for i in range(10):
         print(myData[i].get("data").get("title"))
