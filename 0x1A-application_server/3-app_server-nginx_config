@@ -1,0 +1,13 @@
+server {
+     listen 80;
+     listen [::]:80;
+     root /var/www/html;
+     index index.html index.htm;
+     add_header X-Served-By 142632-web-01;
+     location /airbnb-onepage/ {
+         proxy_pass http://localhost:5000;
+     }
+     location ~ /number_odd_or_even/(.*)$ {
+         proxy_pass http://localhost:5001/$1;
+     }
+}
