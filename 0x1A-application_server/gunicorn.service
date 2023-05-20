@@ -1,13 +1,13 @@
 [Unit]
-Description=my first app aitomation
+Description=gunicorn daemon
 After=network.target
 
 [Service]
-User=www-data
-#Group=www-data
-WorkingDirectory=/var/www/html/
+User=root
+Group=root
+WorkingDirectory=/var/www/html
 Environment=/usr/bin/env
-ExecStart=/usr/bin/env gunicorn --workers 3 --bind 0.0.0.0:5003 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log web_dynamic.2-hbnb:app
+ExecStart=/usr/bin/ gunicorn --workers 3 --error-logfile /tmp/airbnb-error.log --access-logfile /tmp/airbnb-access.log --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app
 Restart=always
 RestartSec=10
 
