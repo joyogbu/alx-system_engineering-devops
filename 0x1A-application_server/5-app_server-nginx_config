@@ -12,11 +12,8 @@ server {
          proxy_set_header Host $host;
          proxy_set_header X-Real-IP $remote_addr;
      }
-     location ~ /web_dynamic/2-hbnb/ {
-         proxy_pass http://127.0.0.1:5003;
-     }
      location / {
-         proxy_pass http://127.0.0.1:5003;
+         proxy_pass http://127.0.0.1:5003/2-hbnb;
      }
      location ~ /web_dynamic/static/ {
          autoindex on;
